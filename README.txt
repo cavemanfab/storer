@@ -1,9 +1,9 @@
- ********************************************
- * Automatic archiving of email attachments *
- ********************************************
+ **************************************************************
+ * Automatic archiving of email attachments in a Synology NAS *
+ **************************************************************
 
 PURPOSE:
-having a quick and friendly way to store files in your synology nas when you're away.
+having a quick and friendly way to store files in your synology nas when you're away or programmatically.
 The interface is email.
 You send an email with one or more attachments, and this script extracts and stores them in a predetermined
 folder; you can specify a subfolder.
