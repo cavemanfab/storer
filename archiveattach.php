@@ -262,7 +262,13 @@ class MailMessageClass {
 								whaterr (ERR_WRONGTO);
 							}
 							*/
-							if (preg_match("/to:(?:.*<| *)([^>]+)/i", $linea, $tolookup)) $this->to = $tolookup[1];
+							if (preg_match("/to:(.*<| *)([^>]+)/i", $linea, $tolookup)) $this->to = $tolookup[2];
+							/*
+							  Wanna use the disply name to determine the key for destlut.text? Work on
+							  $tolookup[1]. Warning, could be empty: if you address to "Doe, John<johndoe@nowhere.us>
+							  you'll find <blank space>"Doe, John" in $tolookup[1], including the quotes.
+							  If you just send to johndoe@nowhere.us it will be empty.
+							*/
 							break;
 					}
 			}
