@@ -1,24 +1,13 @@
 # syn: 
 # short fullpath
-# ad es. contabilita /volume1/lavoro/autostore
-# se "short" e'  "-", quella che segue È una regular expression il cui primo gruppo di cattura Viene usato Di nuovo come short 
-#
-# scrivendo a nickname.archive@dominio.tld cerca nickname nelle righe qua sotto
-# e usa la corrispondente cartella per archiviare i files.
-# In caso di duplicati becca la prima che trova.
+# example: acct /volume1/finance/autostore
+# in the preceding example, "acct" is the short for the pathname that follows
+# if "short" is a dash (-), what follows is a regex that will be used to obtain a default short from recipient's name
+# e.g. if you write to john.archive@yourdom.com and the regex is ^(.+)\.archive@yourdom\.com, "john" is extracted as it
+# is the 1st capture group of the regex. "john" is then looked up in the table, obtaining a path.
 
-test /home/fabio/Prova attach
+test /home/fabio/test attach
 fabio /var/services/homes/fabio
-lavoro /volume1/Lavoro/ExtremaRatio
-contabilita /volume1/Lavoro/ExtremaRatio/Contabilita
-ffabio /var/services/homes/fabio/%body%
-flavoro /volume1/Lavoro/ExtremaRatio/
-
-# Default:
-# se non viene specificato nulla, ricavo dal destinatario qualcosa in base 
-# alla regexp: il primo capture group sara' quelo che devo cercare (di nuovo)
-# in questo file.
-# Quindi se mando a gino.archive@casa.manera.biz e la regexp e' ^(.+)\.archive@casa\.manera\.biz
-# ricavo gino che poi ricerco sempre qua
-
-- ^(.+)\.archive@casa\.manera\.biz$
+lavoro /volume1/work/mystuff
+acct /volume1/finance/autostore
+- ^(.+)\.archive@attach\.domain\.com$
