@@ -3,8 +3,9 @@
 # example: acct /volume1/finance/autostore
 # in the preceding example, "acct" is the short for the pathname that follows
 # if "short" is a dash (-), what follows is a regex that will be used to obtain a default short from recipient's name
-# e.g. if you write to john.archive@yourdom.com and the regex is ^(.+)\.archive@yourdom\.com, "john" is extracted as it
-# is the 1st capture group of the regex. "john" is then looked up in the table, obtaining a path.
+# e.g. if you send an email to john.archive@yourdom.com and the regex is ^(.+)\.archive@yourdom\.com,
+# "john" is extracted, as it is the 1st capture group of the regex. "john" is then looked up in
+#  the table, obtaining a path.
 
 test /home/fabio/test attach
 fabio /var/services/homes/fabio

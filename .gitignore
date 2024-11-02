@@ -6,3 +6,7 @@ archiveattach (Safety Copy).php
 atxtmessage
 awrongmsg
 amsg
+.vscode/
+.buildpath
+.project
+.gitignore
